@@ -1,0 +1,67 @@
+/**
+ * New Media Campaigns Idioms
+ *
+ * These are common patterns we use in all of our
+ * projects. They are consolidated here to keep code DRY.
+ */
+
+// Hides text when using image replacement
+.noText{
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+// Removes bullets, margin, and padding from list
+.noList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// Removes webkit styling from form element
+.noForm{
+    border: none;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+}
+
+// Center a fixed width container
+.fixedWidth(@width) {
+    margin: 0 auto;
+    width: @width;
+}
+
+// Adds left or right columns (e.g. content and sidebar)
+.columnWidth(@width){
+    display: inline;
+    width: @width;
+}
+.columnLeft(@width){
+    .columnWidth(@width);
+    float: left;
+}
+.columnRight(@width){
+    .columnWidth(@width);
+    float: right;
+}
+
+// Set width and height of element to that of its parent
+.fullSize{
+    height: 100%;
+    width: 100%;
+}
+
+// Position element absolutely to 0,0
+.absoluteDefault{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+// Position element absolutely and set its width and height to that of its parent (useful for slideshows)
+.absoluteFullSize{
+    .absoluteDefault;
+    .fullSize;
+}
