@@ -16,6 +16,26 @@ body { font-family: sans-serif; }
     font-weight: bold;
 }
 
+// Sizes
+.btn-size(@scale){
+    height: @baseline * @scale;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    line-height: @baseline * @scale;
+}
+.btn-half{
+    .btn-size(0.75);
+    font-size: 0.9em;
+}
+.btn-single{
+    .btn-size(1);
+    font-size: 1em;
+}
+.btn-double{
+    .btn-size(2);
+    font-size: 1.25em;
+}
+
 // Shapes
 .bb-shape-square() {
     .border-radius(0);
