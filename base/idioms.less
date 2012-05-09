@@ -65,3 +65,17 @@
     .absoluteDefault;
     .fullSize;
 }
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+.clearFix() {
+    *zoom:1;
+
+    &:before,
+    &:after {
+        content:"";
+        display:table;
+    }
+    &:after {
+        clear:both;
+    }
+}

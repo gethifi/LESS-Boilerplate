@@ -7,113 +7,121 @@
  */
 
 // Settings
-
-@baseline: 20px;
-
-// Block-level
-
-h1, h2, h3, h4, h5, h6, ul, ol, dl, p, blockquote, table, form, pre{
-    margin-bottom: @baseline;
-}
+@import 'variables.less';
+/*
+@baseline: @baseline;
+*/
 
 // Spacing
-// p, m = padding, margin
+// p, m, lh = padding, margin, line-height
 // a, t, r, b, l, h, v = all, top, right, bottom, left, horizontal, vertical
-// s, m, l, n = small(@baseline / 2), medium(@baseline), large(@baseline * 2), none(0px)
+// n, h, s, d = none(0px), half(@baseline / 2), single(@baseline), double(@baseline * 2), none(0px)
 
 .ptn, .pvn, .pan{
     padding-top: 0px !important
 }
-.pts, .pvs, .pas{
+.pth, .pvh, .pah{
     padding-top: @baseline / 2 !important
 }
-.ptm, .pvm, .pam{
+.pts, .pvs, .pas{
     padding-top: @baseline !important
 }
-.ptl, .pvl, .pal{
+.ptd, .pvd, .pad{
     padding-top: @baseline * 2 !important
 }
 .prn, .phn, .pan{
     padding-right: 0px !important
 }
-.prs, .phs, .pas{
+.prh, .phh, .pah{
     padding-right: @baseline / 2 !important
 }
-.prm, .phm, .pam{
+.prs, .phs, .pas{
     padding-right: @baseline !important
 }
-.prl, .phl, .pal{
+.prd, .phd, .pad{
     padding-right: @baseline * 2 !important
 }
 .pbn, .pvn, .pan{
     padding-bottom: 0px !important
 }
-.pbs, .pvs, .pas{
+.pbh, .pvh, .pah{
     padding-bottom: @baseline / 2 !important
 }
-.pbm, .pvm, .pam{
+.pbs, .pvs, .pas{
     padding-bottom: @baseline !important
 }
-.pbl, .pvl, .pal{
+.pbd, .pvd, .pad{
     padding-bottom: @baseline * 2 !important
 }
 .pln, .phn, .pan{
     padding-left: 0px !important
 }
-.pls, .phs, .pas{
+.plh, .phh, .pah{
     padding-left: @baseline / 2 !important
 }
-.plm, .phm, .pam{
+.pls, .phs, .pas{
     padding-left: @baseline !important
 }
-.pll, .phl, .pal{
+.pld, .phd, .pad{
     padding-left: @baseline * 2 !important
 }
 .mtn, .mvn, .man{
     margin-top: 0px !important
 }
-.mts, .mvs, .mas{
+.mth, .mvh, .mah{
     margin-top: @baseline / 2 !important
 }
-.mtm, .mvm, .mam{
+.mts, .mvs, .mas{
     margin-top: @baseline !important
 }
-.mtl, .mvl, .mal{
+.mtd, .mvd, .mad{
     margin-top: @baseline * 2 !important
 }
 .mrn, .mhn, .man{
     margin-right: 0px !important
 }
-.mrs, .mhs, .mas{
+.mrh, .mhh, .mah{
     margin-right: @baseline / 2 !important
 }
-.mrm, .mhm, .mam{
+.mrs, .mhs, .mas{
     margin-right: @baseline !important
 }
-.mrl, .mhl, .mal{
+.mrd, .mhd, .mad{
     margin-right: @baseline * 2 !important
 }
 .mbn, .mvn, .man{
     margin-bottom: 0px !important
 }
-.mbs, .mvs, .mas{
+.mbh, .mvh, .mah{
     margin-bottom: @baseline / 2 !important
 }
-.mbm, .mvm, .mam{
+.mbs, .mvs, .mas{
     margin-bottom: @baseline !important
 }
-.mbl, .mvl, .mal{
+.mbd, .mvd, .mad{
     margin-bottom: @baseline * 2 !important
 }
 .mln, .mhn, .man{
     margin-left: 0px !important
 }
-.mls, .mhs, .mas{
+.mlh, .mhh, .mah{
     margin-left: @baseline / 2 !important
 }
-.mlm, .mhm, .mam{
+.mls, .mhs, .mas{
     margin-left: @baseline !important
 }
-.mll, .mhl, .mal{
+.mld, .mhd, .mad{
     margin-left: @baseline * 2 !important
+}
+.lhh {
+    line-height: @baseline / 2 !important;
+}
+.lhs {
+    line-height: @baseline !important;
+}
+.lhd {
+    line-height: @baseline * 2 !important;
+}
+.lhn {
+    line-height: 0px;
 }

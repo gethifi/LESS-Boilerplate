@@ -22,6 +22,20 @@
             color: #444 !important;
             font-size: 13px;
         }
+
+        .grid {
+            
+        }
+        .display {
+            overflow: hidden;
+            background: #eee;
+            margin-bottom: 5px !important;
+            border-radius: 3px;
+        }
+        .display div {
+            background: #ddd;
+            border-radius: 3px;
+        }
     </style>
 
     <!--[if lt IE 9]>
@@ -29,14 +43,431 @@
     <![endif]-->
 </head>
 <body>
-    <div class="grid">
-        <div class="row">
-            <div class="column12">
-                <h1>test</h1>
+    <h1>Grid</h1>
+    <h2>Fixed</h2>
+    <h3>Basic</h3>
+<div class="grid-fixed">
+    <div class="row display">
+        <div class="col4">
+            .col4               
+        </div>
+        <div class="col4">
+            .col4               
+        </div>
+        <div class="col4">
+            .col4               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col3">
+            .col3             
+        </div>
+        <div class="col3">
+            .col3             
+        </div>
+        <div class="col3 last">
+            .col3             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col2">
+            .col2                
+        </div>
+        <div class="col8">
+            .col8             
+        </div>
+        <div class="col2">
+            .col2                
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col1">
+            .col1            
+        </div>
+        <div class="col11">
+            .col11            
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col2">
+            .col2                
+        </div>
+        <div class="col10">
+            .col10               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col3">
+            .col3             
+        </div>
+        <div class="col9">
+            .col9               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col4">
+            .col4               
+        </div>
+        <div class="col8">
+            .col8             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col5">
+            .col5               
+        </div>
+        <div class="col7">
+            .col7              
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col6">
+            .col6               
+        </div>
+        <div class="col6">
+            .col6               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col7">
+            .col7              
+        </div>
+        <div class="col5">
+            .col5               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col8">
+            .col8             
+        </div>
+        <div class="col4">
+            .col4               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col9">
+            .col9               
+        </div>
+        <div class="col3">
+            .col3             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col10">
+            .col10               
+        </div>
+        <div class="col2">
+            .col2                
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col11">
+            .col11            
+        </div>
+        <div class="col1">
+            .col1            
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col12">
+            .col12             
+        </div>
+    </div>
+</div>
+<h3>Offsets</h3>
+<div class="grid-fixed">
+    <div class="row display">
+        <div class="col1">
+            .col1                
+        </div>
+        <div class="col11">
+            .col11            
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col1">
+            .col1               
+        </div>
+        <div class="col5 offset1">
+            .col5.offset1          
+        </div>
+        <div class="col5">
+            .col5         
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col1">
+            .col1              
+        </div>
+        <div class="col4 offset2">
+            .col4.offset2               
+        </div>
+        <div class="col5">
+            .col5         
+        </div>
+    </div>
+</div>
+<h3>Push/Pull</h3>
+<div class="grid-fixed">
+    <div class="row display">
+        <div class="col1 push11">
+            .col1.push11           
+        </div>
+        <div class="col11 pull1">
+            .col11.pull1            
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col2">
+            .col2                
+        </div>
+        <div class="col10">
+            .col10               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col3">
+            .col3             
+        </div>
+        <div class="col9">
+            .col9               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col4">
+            .col4               
+        </div>
+        <div class="col8">
+            .col8             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col5">
+            .col5               
+        </div>
+        <div class="col7">
+            .col7              
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col6">
+            .col6               
+        </div>
+        <div class="col6">
+            .col6               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col7">
+            .col7              
+        </div>
+        <div class="col5">
+            .col5               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col8">
+            .col8             
+        </div>
+        <div class="col4">
+            .col4               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col9">
+            .col9               
+        </div>
+        <div class="col3">
+            .col3             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col10">
+            .col10               
+        </div>
+        <div class="col2">
+            .col2                
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col11">
+            .col11            
+        </div>
+        <div class="col1">
+            .col1            
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col12">
+            .col12             
+        </div>
+    </div>
+</div>
+
+<h2>Fluid</h2>
+<div class="grid-fluid">
+    <div class="row display">
+        <div class="col4">
+            .col4               
+        </div>
+        <div class="col4">
+            .col4               
+        </div>
+        <div class="col4">
+            .col4               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col3">
+            .col3             
+        </div>
+        <div class="col3">
+            .col3             
+        </div>
+        <div class="col3 last">
+            .col3             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col2">
+            .col2                
+        </div>
+        <div class="col8">
+            .col8             
+        </div>
+        <div class="col2">
+            .col2                
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col1">
+            .col1            
+        </div>
+        <div class="col11">
+            .col11            
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col2">
+            .col2                
+        </div>
+        <div class="col10">
+            .col10               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col3">
+            .col3             
+        </div>
+        <div class="col9">
+            .col9               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col4">
+            .col4               
+        </div>
+        <div class="col8">
+            .col8             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col5">
+            .col5               
+        </div>
+        <div class="col7">
+            .col7              
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col6">
+            .col6               
+        </div>
+        <div class="col6">
+            .col6               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col7">
+            .col7              
+        </div>
+        <div class="col5">
+            .col5               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col8">
+            .col8             
+        </div>
+        <div class="col4">
+            .col4               
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col9">
+            .col9               
+        </div>
+        <div class="col3">
+            .col3             
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col10">
+            .col10               
+        </div>
+        <div class="col2">
+            .col2                
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col11">
+            .col11            
+        </div>
+        <div class="col1">
+            .col1            
+        </div>
+    </div>
+    <div class="row display">
+        <div class="col12">
+            .col12             
+        </div>
+    </div>
+</div>
+
+<h1>Nested</h1>
+<div class="grid">
+    <div class="row">
+        <div class="col6">
+            <div class="row display">
+                <div class="col3">
+                    .col3
+                </div>
+                <div class="col3">
+                    .col3
+                </div>
+            </div>
+            <div class="row display">
+                <div class="col2">
+                    .col2
+                </div>
+                <div class="col2">
+                    .col2
+                </div>
+                <div class="col2">
+                    .col2
+                </div>
             </div>
         </div>
+        <div class="col6">
+            test
+        </div>
+    </div>
+</div>
+
+
+    <div class="grid">
         <div class="row">
-            <div class="column6">
+            <div class="col6">
                 <h3>Buttons</h3>
                 <h4>Half Size (Baseline / 2)</h4>
                 <p>Use class <code>.btn-half</code></p>
@@ -71,7 +502,7 @@
                 </p>
                 <pre>&lt;a class=&quot;btn-double btn-soft&quot; href=&quot;#&quot;&gt;Label&lt;/a&gt;</pre>
             </div>
-            <div class="column6">
+            <div class="col6">
                 <h3>Bars</h3>
                 <p class="bar-minimal">Minimal</p>
                 <p class="bar-clean">Clean</p>
@@ -79,7 +510,74 @@
                 <p class="bar-pill">Pill</p>
                 <p class="bar-gloss">Gloss</p>
             </div>
-        </div>
+        </div><!-- .row -->
+        <div class="row">
+            <div class="col6 last">
+                <h1>Style Guide</h1>
+<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis eges<sup>tas</sup>. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas. Aenean ultri<sub>cies</sub> mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. <code>Vestibulum erat wisi</code>, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <strong>commodo vitae</strong>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+<h2>Heading Level 2</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+<ol>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+<blockquote>
+    <p>Blockquote p.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+    <p>Blockquote p.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+</blockquote>
+<h3>Heading Level 3</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+</ul>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+<h4>Heading Level 4</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+<pre class="brush:css">/************************************
+* Multiline comment
+************************************/
+#Heading h1 a { 
+display: block; 
+width: 300px; 
+height: 80px; 
+}</pre>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.</p>
+<h5>Heading Level 5</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+<h6>Heading Level 6</h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p> 
+
+
+<form action="/signup-2" method="post" class="generated-form"> 
+    <input type="hidden" name="id" value="3675c5ff54044375b4a9a2221c3b857e" /> 
+    <fieldset class="aggregate"> 
+        <fieldset class="text"> 
+            <label for="firstName">First Name</label> 
+            <input type="text" class="text" id="firstName" name="firstName" value=""/> 
+        </fieldset> 
+        <fieldset class="text"> 
+            <label for="lastName">Last Name</label> 
+            <input type="text" class="text" id="lastName" name="lastName" value=""/> 
+        </fieldset> 
+    </fieldset> 
+    <fieldset class="text"> 
+        <label for="email">Email Address</label> 
+        <input type="text" class="text email" id="email" name="email" value=""/> 
+    </fieldset> 
+    <fieldset class="textarea"> 
+        <label for="field-1">What&#x27;s on your mind?</label> 
+        <textarea id="field-1" name="field-1" rows="10" cols="50"></textarea> 
+    </fieldset>     
+    <fieldset class="submit"> 
+        <input type="submit" value="Submit"/> 
+    </fieldset> 
+</form> 
+
+            </div>
+        </div><!-- .row -->
     </div>
 </body>
 </html>

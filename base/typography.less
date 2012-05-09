@@ -5,30 +5,33 @@
  * styles for text elements.
  */
 
-/* Settings */
+// Settings
+@import 'variables.less';
+/*
+@baseline: @baseline;
 
-@baseline: 20px;
+@body-color: @body-color;
+@body-font-family: @body-font-family;
+@body-font-size: @body-font-size;
+@body-accent-color: @body-accent-color;
 
-@color-gray: #666;
-@color-blue: #0033ff;
-@color-black: #000;
-@color-white: #FFF;
-
-@body-color: @color-gray;
-@body-font-family: Helvetica, Arial, Verdana, sans-serif;
-@body-font-size: 12px;
-@body-accent-color: @color-blue;
-
-@header-color: @color-black;
-@header-font-family: Georgia, serif;
-@header-font-weight: normal;
+@header-color: @header-clor;
+@header-font-family: @header-font-family;
+@header-font-weight: @header-font-weight;
+*/
 
 /* Base */
 
-html{
+html, body {
     color: @body-color;
     font-size: @body-font-size;
-    line-height: @baseline;
+    .lhs;
+}
+
+// Block-level
+
+h1, h2, h3, h4, h5, h6, ul, ol, dl, p, blockquote, table, form, pre{
+    .mbs;
 }
 
 /* Headers */
@@ -40,33 +43,36 @@ html{
 }
 h1, .alpha{
     .all-headers;
-    font-size: @body-font-size * 3;
-    line-height: @baseline * 3;
+    font-size: @body-font-size * 2.5;
+    .lhd;
 }
 h2, .beta{
     .all-headers;
-    font-size: @body-font-size * 2.5;
-    line-height: @baseline * 3;
+    font-size: @body-font-size * 2;
+    .lhd;
 }
 h3, .gamma{
     .all-headers;
-    font-size: @body-font-size * 2;
-    line-height: @baseline * 2;
+    font-size: @body-font-size * 1.5;
+    .lhd;
 }
 h4, .delta{
     .all-headers;
     font-size: @body-font-size * 1.5;
-    line-height: @baseline * 2;
+    .lhd;
+    .mbn;
 }
 h5, .epsilon{
     .all-headers;
-    font-size: @body-font-size * 1;
-    line-height: @baseline * 1;
+    font-size: @body-font-size * 1.2;
+    .lhs;
+    .mbn
 }
 h6, .zeta{
     .all-headers;
-    font-size: @body-font-size * 0.8;
-    line-height: @baseline * 1;
+    font-size: @body-font-size * 1;
+    .lhs;
+    .mbn;
 }
 
 /* Headers (above scale) */
@@ -74,24 +80,24 @@ h6, .zeta{
 .giga{
     .all-headers;
     font-size: @body-font-size * 6;
-    line-height: @baseline * 6;
+    line-height: @baseline * 4;
 }
 .mega{
     .all-headers;
     font-size: @body-font-size * 5;
-    line-height: @baseline * 5;
+    line-height: @baseline * 3;
 }
 .kilo{
     .all-headers;
     font-size: @body-font-size * 4;
-    line-height: @baseline * 4;
+    line-height: @baseline * 3;
 }
 
 /* Headers (below scale) */
 
-small, .milli{
+.milli{
     .all-headers;
-    font-size: @body-font-size * 0.7;
+    font-size: @body-font-size * 0.8;
 }
 
 /* Text */
@@ -115,7 +121,9 @@ a:focus{
 
 }
 
-
+small {
+    font-size: 80%;
+}
 sup, sub {
     font-size: 80%;
     line-height: 0;
@@ -127,9 +135,8 @@ sub {
     vertical-align: sub;
 }
 blockquote{
-    font-size: @body-font-size * 1.5;
     font-style: italic;
-    line-height: @baseline * 2;
+    .pls;
 }
 pre, code, kbd{
     font-family: Consolas, "Courier New", Courier, mono;
@@ -142,4 +149,7 @@ strong{
 }
 em{
     font-style: italic;
+}
+ol, ul {
+    .pls;
 }
