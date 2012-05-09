@@ -46,6 +46,12 @@
         width: 100%;
         margin: 0 auto;
         .clearFix;
+        
+        .center,.center:last-child {
+            float: none;
+            display: block;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -56,12 +62,7 @@
     @columns: @fixed-columns;
     width: @total-width;
 
-    .push(@cols) {
-    }
-    .pull(@cols) {
-        right: (@cols * (@column-width + @gutter-width)) * 1px;
-    }
-
+    /* This is duplicated in both classes. Unavoidable. */
     .colX (@index) when (@index > 0) {
         (~".col@{index}") {
             #grid > .cols(@index,@column-width,@gutter-width);
@@ -107,12 +108,7 @@
     @columns: @fluid-columns;
     width: @total-width;
 
-    .push(@cols) {
-    }
-    .pull(@cols) {
-        right: (@cols * (@column-width + @gutter-width)) * 1px;
-    }
-
+    /* This is duplicated in both classes. Unavoidable. */
     .colX (@index) when (@index > 0) {
         (~".col@{index}") {
             #grid > .cols(@index,@column-width,@gutter-width);
