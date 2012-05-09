@@ -1,103 +1,158 @@
-/////////////////
-// Semantic.gs // for LESS: http://lesscss.org/
-/////////////////
+/**
+ * Hybrid Grid Sytem
+ *
+ * Blend of the Semantic Grid System and Zurb Foundation with a little Twitter Bootstrap
+ */
 
-// Defaults which you can freely override
-@column-width: 200;
-@gutter-width: 100;
-@columns: 12;
+// Settings
+@import 'variables.less';
+/*
+@fixed-column-width: 40px;
+@fixed-gutter-width: 20px;
+@fixed-columns: 12;
 
-// Utility variable — you should never need to modify this
-@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
-
-// Set @total-width to 100% for a fluid layout
-@total-width: @gridsystem-width;
-@total-width: 100%;
-
-// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
-// @min-width: 960;
-// @correction: 0.5 / @min-width * 100 * 1%;
-
-// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix() {
-    *zoom:1;
-
-    &:before,
-    &:after {
-        content:"";
-        display:table;
-    }
-    &:after {
-        clear:both;
-    }
-}
-
+@fluid-column-width: 4.3%;
+@fluid-gutter-width: 4.4%;
+@fluid-columns: 12;
+*/
 
 //////////
 // GRID //
 //////////
 
-.grid {
-    width: 100%;
-    .clearfix;
-}
-.row(@columns:@columns) {
-    display: block;
-    width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
-    margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
-    // *width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width)-@correction;
-    // *margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1)-@correction;
-    .clearfix;
-}
-.column(@x,@columns:@columns) {
-    display: inline;
-    float: left;
-    width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
-    margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
-    // *width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width)-@correction;
-    // *margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width)-@correction;
-}
-.push(@offset:1) {
-    margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
-}
-.pull(@offset:1) {
-    margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+#grid {
+
+    .cols(@cols,@width,@gutter){
+        width: ((@cols * @width) + ((@cols - 1) * @gutter));
+        margin-left: @gutter;
+        position: relative;
+        display: inline;
+        float: left;
+        min-height: 1px;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            float: right;
+        }
+    }
+
 }
 
-// PRESET COLUMNS (DO NOT USE IF GOING RESPONSIVE)
-.column1{
-    .column(1);
+.grid-fixed,.grid-fluid {
+    .clearFix;
+    .row {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        .clearFix;
+    }
 }
-.column2{
-    .column(2);
+
+.grid-fixed {
+    @total-width: (@fixed-column-width*@fixed-columns) + (@fixed-gutter-width*(@fixed-columns - 1));
+    @column-width: @fixed-column-width;
+    @gutter-width: @fixed-gutter-width;
+    @columns: @fixed-columns;
+    width: @total-width;
+
+    .push(@cols) {
+    }
+    .pull(@cols) {
+        right: (@cols * (@column-width + @gutter-width)) * 1px;
+    }
+
+    .colX (@index) when (@index > 0) {
+        (~".col@{index}") {
+            #grid > .cols(@index,@column-width,@gutter-width);
+        }
+        .colX(@index - 1);
+    }
+    .colX (0) {}
+    .colX(@columns);
+
+    .offsetX (@index) when (@index > 0) {
+        (~".offset@{index}") {
+            margin-left: (@index * @column-width) + ((@index + 1) * @gutter-width);
+        }
+        .offsetX(@index - 1);
+    }
+    .offsetX (0) {}
+    .offsetX(@columns - 1);
+
+    .pushX (@index) when (@index > 0) {
+        (~".push@{index}") {
+            left: @index * (@column-width + @gutter-width);
+        }
+        .pushX(@index - 1);
+    }
+    .pushX (0) {}
+    .pushX(@columns - 1);
+
+    .pullX (@index) when (@index > 0) {
+        (~".pull@{index}") {
+            right: @index * (@column-width + @gutter-width);
+        }
+        .pullX(@index - 1);
+    }
+    .pullX (0) {}
+    .pullX(@columns - 1);
 }
-.column3{
-    .column(3);
+
+
+.grid-fluid {
+    @total-width: 100%;
+    @column-width: @fluid-column-width;
+    @gutter-width: @fluid-gutter-width;
+    @columns: @fluid-columns;
+    width: @total-width;
+
+    .push(@cols) {
+    }
+    .pull(@cols) {
+        right: (@cols * (@column-width + @gutter-width)) * 1px;
+    }
+
+    .colX (@index) when (@index > 0) {
+        (~".col@{index}") {
+            #grid > .cols(@index,@column-width,@gutter-width);
+        }
+        .colX(@index - 1);
+    }
+    .colX (0) {}
+    .colX(@columns);
+
+    .offsetX (@index) when (@index > 0) {
+        (~".offset@{index}") {
+            margin-left: (@index * @column-width) + ((@index + 1) * @gutter-width);
+        }
+        .offsetX(@index - 1);
+    }
+    .offsetX (0) {}
+    .offsetX(@columns - 1);
+
+    .pushX (@index) when (@index > 0) {
+        (~".push@{index}") {
+            left: @index * (@column-width + @gutter-width);
+        }
+        .pushX(@index - 1);
+    }
+    .pushX (0) {}
+    .pushX(@columns - 1);
+
+    .pullX (@index) when (@index > 0) {
+        (~".pull@{index}") {
+            right: @index * (@column-width + @gutter-width);
+        }
+        .pullX(@index - 1);
+    }
+    .pullX (0) {}
+    .pullX(@columns - 1);
 }
-.column4{
-    .column(4);
-}
-.column5{
-    .column(5);
-}
-.column6{
-    .column(6);
-}
-.column7{
-    .column(7);
-}
-.column8{
-    .column(8);
-}
-.column9{
-    .column(9);
-}
-.column10{
-    .column(10);
-}
-.column11{
-    .column(11);
-}
-.column12{
-    .column(12);
-}
+
+
+
+
+
+
+
