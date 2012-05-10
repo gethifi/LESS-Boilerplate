@@ -5,21 +5,21 @@
  * projects. They are consolidated here to keep code DRY.
  */
 
-// Hides text when using image replacement
+/*  Hides text when using image replacement */
 .noText{
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
 }
 
-// Removes bullets, margin, and padding from list
+/*  Removes bullets, margin, and padding from list */
 .noList{
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-// Removes webkit styling from form element
+/*  Removes webkit styling from form element */
 .noForm{
     border: none;
     margin: 0;
@@ -27,13 +27,13 @@
     -webkit-appearance: none;
 }
 
-// Center a fixed width container
+/*  Center a fixed width container */
 .fixedWidth(@width) {
     margin: 0 auto;
     width: @width;
 }
 
-// Adds left or right columns (e.g. content and sidebar)
+/*  Adds left or right columns (e.g. content and sidebar) */
 .columnWidth(@width){
     display: inline;
     width: @width;
@@ -47,26 +47,26 @@
     float: right;
 }
 
-// Set width and height of element to that of its parent
+/*  Set width and height of element to that of its parent */
 .fullSize{
     height: 100%;
     width: 100%;
 }
 
-// Position element absolutely to 0,0
+/*  Position element absolutely to 0,0 */
 .absoluteDefault{
     position: absolute;
     left: 0;
     top: 0;
 }
 
-// Position element absolutely and set its width and height to that of its parent (useful for slideshows)
+/*  Position element absolutely and set its width and height to that of its parent (useful for slideshows) */
 .absoluteFullSize{
     .absoluteDefault;
     .fullSize;
 }
 
-// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+/*  The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearFix() {
     *zoom:1;
 

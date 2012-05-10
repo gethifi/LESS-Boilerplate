@@ -6,16 +6,20 @@
  * in site styles.
  */
 
-// Settings
+/* Settings */
+
 @import 'variables.less';
+
 /*
 @baseline: @baseline;
 */
 
-// Spacing
-// p, m, lh = padding, margin, line-height
-// a, t, r, b, l, h, v = all, top, right, bottom, left, horizontal, vertical
-// n, h, s, d = none(0px), half(@baseline / 2), single(@baseline), double(@baseline * 2), none(0px)
+/**
+ * Spacing
+ * p, m, lh = padding, margin, line-height
+ * a, t, r, b, l, h, v = all, top, right, bottom, left, horizontal, vertical
+ * n, h, s, d = none(0px), half(@baseline / 2), single(@baseline), double(@baseline * 2), none(0px)
+ */
 
 .ptn, .pvn, .pan{
     padding-top: 0px !important
@@ -123,5 +127,5 @@
     line-height: @baseline * 2 !important;
 }
 .lhn {
-    line-height: 0px;
+    line-height: 0px !important;
 }
