@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>LESS Boilerplate Documentation</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet/less" href="all.less">
+
+    <!-- optional remove in production -->
+    <script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container grid-fluid">
+   		<header class="header">
+   			<h1 class="">LESS Boilerplate Documentation</h1>
+   		</header>
+   		<div class="main row">
+   			<nav class="nav col3">
+					<a href="#introduction">Introduction</a>
+					<a href="#reset">Reset</a>
+					<a href="#prefixer">Prefixer</a>
+					<a href="#spacing">Spacing</a>
+					<a href="#typography">Typography</a>
+					<a href="#idioms">Idioms</a>
+					<a href="#grid">Grid</a>
+					<a href="">Buttons and Bars</a>
+   			</nav>
+   			<section class="content col9">
+   				<article id="introduction">
+   					<h1>Introduction</h1>
+   					<p>This is a boilerplate. It is not a framework or a foundation. That means that on a per-site basis it is reasonable to mess around with its components.<p>
+   					<p>As such, it has been made very minimal and very modular. You can take and use components that are helpful while leaving others behind. Each component has been built thoughtfully, after looking thoroughly at the other projects out there. So this deseves no credit for cleverness and we've done our best to offer that credit whenever possible.</p>
+   				</article>
+   				<article id="reset">
+   					<h1>Reset</h1>
+   					<p>The reset stylesheet include is a fairly basic one. It is Richard Clarks's HTML5 Doctor Reset.</p>
+   				</article>
+   				<article id="prefixer">
+   					<h1>Prefixer</h1>
+   					<p>The LESS Prefixer from http://lessprefixer.com has been included. We've fount it offers the most complete and accurate coverage of properties that need prefixed.</p>
+   					<h2 id="how" class="delta">How it works:</h2>
+	                <p>As a rule, you can use the CSS properties you would expect just by adding a '.' to start them and putting arguments afterwards.</p>
+
+	                <p>So you type this:</p>
+
+<pre><code>div {
+    .box-shadow(0px 0px 10px rgba(255,0,0,.5));
+}
+</code></pre>
+
+<p>and you get this through the beauty of LESS:</p>
+
+<pre><code>div {
+    -webkit-box-shadow: 0px 0px 10px rgba(255,0,0,.5);
+    -moz-box-shadow: 0px 0px 10px rgba(255,0,0,.5);
+    box-shadow: 0px 0px 10px rgba(255,0,0,.5);
+}
+</code></pre>
+	                <p>
+	                    The convention is simple: when shorthand is available, arguments are not parameterized. Learn CSS, not LESS Prefixer
+	                </p>
+	                <p>
+	                    You may notice that not all vendor prefixes are included. This is not a mistake! Not all vendor prefixes are needed for each property. LESS Prefixer uses the necessary prefixes for each property as demonstrated by <a href="http://css3please.com">CSS3Please</a>.
+	                </p>
+
+	                <h2 id="what" class="delta">What's included</h2>
+	                <p>A whole bunch. Basically any CSS property that needs to be prefixed and is supported by a reasonable number of browsers. There is a nice Table of Contents in the file so you can look this up quickly while working in your project. Everything is even alphabetized.</p>
+	                <div class="toc">
+	                <ul>
+	                <li>.animation(@args)
+
+	                <ul>
+	                <li>.animation-delay(@delay)</li>
+	                <li>.animation-direction(@direction)</li>
+	                <li>.animation-duration(@duration)</li>
+	                <li>.animation-iteration-count(@count)</li>
+	                <li>.animation-name(@name)</li>
+	                <li>.animation-play-state(@state)</li>
+	                <li>.animation-timing-function(@function)</li>
+	                </ul>
+	                </li>
+	                <li>.background-size(@args)</li>
+	                <li>.border-radius(@args)</li>
+	                <li>.box-shadow(@args)
+
+	                <ul>
+	                <li>.inner-shadow(@args) *</li>
+	                </ul>
+	                </li>
+	                <li>.box-sizing(@args)
+
+	                <ul>
+	                <li>.border-box() *</li>
+	                <li>.content-box() *</li>
+	                </ul>
+	                </li>
+	                <li>.columns(@args)
+
+	                <ul>
+	                <li>.column-count(@count)</li>
+	                <li>.column-gap(@gap)</li>
+	                <li>.column-rule(@args)</li>
+	                <li>.column-width(@width)</li>
+	                </ul>
+	                </li>
+	                <li>.gradient(@default,@start,@stop) *
+
+	                <ul>
+	                <li>.linear-gradient-top(@default,@color1,@stop1,@color2,@stop2[,...) *</li>
+	                <li>.linear-gradient-left(@default,@color1,@stop1,@color2,@stop2[,...) *</li>
+	                </ul>
+	                </li>
+	                <li>.opacity(@factor)</li>
+	                <li>.text-shadow(@args)</li>
+	                <li>.transform(@args)
+
+	                <ul>
+	                <li>.rotate(@deg)</li>
+	                <li>.scale(@factor)</li>
+	                <li>.translate(@x,@y)</li>
+	                <li>.translate3d(@x,@y,@z)</li>
+	                <li>.translateHardware(@x,@y) *</li>
+	                </ul>
+	                </li>
+	                <li>.transition(@args)
+
+	                <ul>
+	                <li>.transition-delay(@delay)</li>
+	                <li>.transition-duration(@duration)</li>
+	                <li>.transition-property(@property)</li>
+	                <li>.transition-timing-function(@function)</li>
+	                </ul>
+	                </li>
+	                </div>
+   				</article>
+   			</section>
+   		</div>
+   	</div>
+</body>
+</html>
