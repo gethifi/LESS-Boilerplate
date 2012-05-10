@@ -5,8 +5,10 @@
  * styles for text elements.
  */
 
-// Settings
+/* Settings */
+
 @import 'variables.less';
+
 /*
 @baseline: @baseline;
 
@@ -28,7 +30,7 @@ html, body {
     .lhs;
 }
 
-// Block-level
+/* Block-level */
 
 h1, h2, h3, h4, h5, h6, ul, ol, dl, p, blockquote, table, form, pre{
     .mbs;
@@ -120,13 +122,12 @@ a:active{
 a:focus{
 
 }
-
 small {
     font-size: 80%;
 }
 sup, sub {
     font-size: 80%;
-    line-height: 0;
+    .lhn;
 }
 sup {
     vertical-align: super;

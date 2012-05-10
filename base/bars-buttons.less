@@ -1,6 +1,5 @@
-body { font-family: sans-serif; }
-
 .button() {
+    cursor: pointer;
     display: inline-block;
     .pah;
     text-align: center;
@@ -16,7 +15,8 @@ body { font-family: sans-serif; }
     font-weight: bold;
 }
 
-// Sizes
+/* Sizes */
+
 .btn-size(@scale){
     height: @baseline * @scale;
     padding-bottom: 0 !important;
@@ -36,7 +36,8 @@ body { font-family: sans-serif; }
     font-size: 1.25em;
 }
 
-// Shapes
+/* Shapes */
+
 .bb-shape-square() {
     .border-radius(0);
 }
@@ -47,7 +48,8 @@ body { font-family: sans-serif; }
     .border-radius(@baseline);
 }
 
-// Text
+/* Text */
+
 .bb-text-dark(){
     color: #333;
     text-shadow: 0 1px 0 #fff;
@@ -60,7 +62,8 @@ body { font-family: sans-serif; }
 
 }
 
-// Color
+/* Color */
+
 .bb-color-plain(@color){
     background: @color;
 }
@@ -78,7 +81,8 @@ body { font-family: sans-serif; }
     .linear-gradient-top(@color,@topStart,0%,@topStop,50%,@bottomStart,50%,@bottomStop,100%);
 }
 
-//Border
+/* Border */
+
 .bb-border-noborder(){
     border: none;
 }
@@ -94,7 +98,8 @@ body { font-family: sans-serif; }
     .box-shadow(inset 0 2px 1px -1px lighten(@color,20%));
 }
 
-// Minimal
+/* Minimal */
+
 .button-minimal(@color) {
     .button();
     .bb-shape-rounded();
@@ -114,7 +119,8 @@ body { font-family: sans-serif; }
     .bar();
 }
 
-// Clean
+/* Clean */
+
 .button-clean(@color) {
     .button();
     .bb-shape-rounded();
@@ -134,7 +140,8 @@ body { font-family: sans-serif; }
     .bar();
 }
 
-// Soft
+/* Soft */
+
 .button-soft(@color) {
     .button();
     .bb-shape-rounded();
@@ -154,7 +161,8 @@ body { font-family: sans-serif; }
     .bar();
 }
 
-// Pill
+/* Pill */
+
 .button-pill(@color) {
     .button();
     .bb-shape-round();
@@ -174,7 +182,8 @@ body { font-family: sans-serif; }
     .bar();
 }
 
-// Gloss
+/* Gloss */
+
 .button-gloss(@color) {
     .button();
     .bb-shape-rounded(5px);
@@ -228,5 +237,3 @@ body { font-family: sans-serif; }
 .bar-soft { .bar-soft(@btn-soft-color); }
 .bar-pill { .bar-pill(@btn-pill-color); }
 .bar-gloss { .bar-gloss(@btn-gloss-color); }
-
-
