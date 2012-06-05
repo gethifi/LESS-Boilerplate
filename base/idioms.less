@@ -3,10 +3,23 @@
  *
  * These are common patterns we use in all of our
  * projects. They are consolidated here to keep code DRY.
+ *
+ * Listing
+ *    * .noText,.textReplace
+ *    * .noList
+ *    * .noForm
+ *    * .fixedWidth(@width)
+ *    * .columnWidth(@width)
+ *    * .columnLeft(@width)
+ *    * .columnRight(@width)
+ *    * .fullSize
+ *    * .absoluteDefault
+ *    * .absoluteFullSize
+ *    * .clearFix
  */
 
 /*  Hides text when using image replacement */
-.noText{
+.noText,.textReplace{
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
@@ -67,7 +80,7 @@
 }
 
 /*  The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearFix() {
+.clearFix {
     *zoom:1;
 
     &:before,
