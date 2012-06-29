@@ -1,4 +1,34 @@
 /**
+ * Name Here
+ *
+ * @version     1.0
+ * @package     Name Here
+ * @author      New Media Campaigns
+ * @copyright   2012 New Media Campaigns
+ * @link        http://www.newmediacampaigns.com
+ *
+ * Copyright (c) 2012 New Media Campaigns
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is furnished
+ * to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+/**
  * Typography
  *
  * This LESS file defines the baseline, color, font-size, and other typographical
@@ -157,4 +187,42 @@ ol, ul {
     ol,ul {
         .mbn;
     }
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+label{
+    display: block;
+    font-weight: bold;
+
+    .req{
+        color: red;
+        font-weight: bold;
+    }
+}
+input.text, textarea, select, .radio-group, .checkbox-group{
+    .mbs;
+}
+input.text, textarea{
+    .noForm;
+    background: #EEE;
+    border: 1px solid #CCC;
+    .border-box;
+    .border-radius(4px);
+    .inner-shadow(fade(#000, 10%) 0 1px 3px);
+    height: @baseline * 1.5;
+    .pah;
+    width: 100%;
+}
+textarea{
+    height: @baseline * 6;
+}
+select{
+    min-width: 30%;
+}
+.checkbox-group label,
+.radio-group label{
+    font-weight: normal;
 }
