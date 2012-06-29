@@ -171,9 +171,19 @@ blockquote{
     .pls;
 }
 pre, code, kbd{
+    background: #F8F8F8;
+    border: 1px solid #EAEAEA;
+    .border-radius(3px);
+    margin: 0 2px;
+    padding: 0 5px;
     font-family: Consolas, "Courier New", Courier, mono;
-    font-size: @body-font-size * 0.8;
-    color: lighten(@body-color, 0.3);
+    font-size: @body-font-size * 0.9;
+    color: @body-color;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+pre{
+    .mhs;
 }
 strong{
     font-weight: bold;
