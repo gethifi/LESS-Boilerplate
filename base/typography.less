@@ -176,7 +176,6 @@ pre, code, kbd{
     color: lighten(@body-color, 0.3);
 }
 strong{
-    color: darken(@body-color, 0.3);
     font-weight: bold;
 }
 em{
@@ -187,6 +186,34 @@ ol, ul {
     ol,ul {
         .mbn;
     }
+}
+
+/* ==========================================================================
+   Alerts
+   ========================================================================== */
+
+.alert{
+    background: #FCF8E3;
+    border: 1px solid #FBEED5;
+    .border-radius(4px);
+    .mbs;
+    .pah;
+    color: #C09853;
+}
+.alert-success{
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+    color: #468847;
+}
+.alert-error{
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+}
+.alert-info{
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #3A87AD;
 }
 
 /* ==========================================================================
