@@ -18,14 +18,14 @@
 /* Sizes */
 
 .btn-size(@scale){
-    height: @baseline * @scale;
+    height: @baseline * @scale !important;
     padding-bottom: 0 !important;
     padding-top: 0 !important;
     line-height: @baseline * @scale;
 }
 .btn-half{
-    .btn-size(0.75);
-    font-size: 0.9em;
+    .btn-size(0.5);
+    font-size: 0.8em;
 }
 .btn-single{
     .btn-size(1);
@@ -33,7 +33,7 @@
 }
 .btn-double{
     .btn-size(2);
-    font-size: 1.25em;
+    font-size: 1.2em;
 }
 
 /* Shapes */
