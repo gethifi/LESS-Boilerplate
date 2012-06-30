@@ -47,6 +47,38 @@
 
     <h1>Grid</h1>
 
+    <p>
+        The NMC bootstrap contains a grid system that makes it simple to create multi-column
+        layouts for desktop and mobile browsers. This grid system relies on a DIV with class
+        <code>.grid</code> that contains one or more DIV elements with class <code>.row</code>
+        that contain one or more elements with class <code>.colX</code> (where X is the column span).
+    </p>
+    <p>
+        For desktop browsers, each grid row must contain 12 columns; this may be changed in "variables.less".
+    </p>
+    <p>
+        For mobile browsers, each grid row must contain 4 columns; this may be changed in "variables.less".
+    </p>
+    <pre>
+&lt;div class=&quot;grid-fixed&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col6 m-col2&quot;&gt;
+            This is the left column.
+        &lt;/div&gt;
+        &lt;div class=&quot;col6 m-col2&quot;&gt;
+            This is the right column.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col4 m-col1&quot;&gt;
+            This is the left column.
+        &lt;/div&gt;
+        &lt;div class=&quot;col8 m-col3&quot;&gt;
+            This is the right column.
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
     <h2>Fixed</h2>
 
     <h3 class="mbn">Basic</h3>
