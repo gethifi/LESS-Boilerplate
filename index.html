@@ -681,61 +681,79 @@
                     <dt>Definition Term</dt>
                     <dd>The full definition goes here</dd>
                 </dl>
+            </div>
+        </div>
+    </div>
 
-                <form action="" method="post" class="generated-form">
-                    <fieldset class="aggregate">
-                        <fieldset class="text">
-                            <label>First Name<span class="req">*</span></label>
-                            <input type="text" class="text" name="firstName" value="" placeholder="Enter your first name"/>
-                        </fieldset>
+    <h1>Forms</h2>
+    <p>
+        Text and textarea controls will assume 100% width of their container; define their width
+        by setting the container width.
+    </p>
+    <div class="grid-fixed">
+        <div class="row">
+            <div class="col12">
+                <h2>Text Input &amp; Label</h2>
+                <p>Use <code>.text</code></p>
+                <div class="field">
+                    <label>Label<span class="req">*</span></label>
+                    <input type="text" class="text" name="text1" value=""/>
+                </div>
 
-                        <fieldset class="text">
-                            <label>Last Name<span class="req">*</span></label>
-                            <input type="text" class="text" name="lastName" value=""/>
-                        </fieldset>
-                    </fieldset>
+                <h2>Text Input w/ Error</h2>
+                <p class="field-instructions">Use <code>.error</code> and <code>.text</code></p>
+                <div class="field">
+                    <label>Label</label>
+                    <input type="text" class="text error" name="text2" value=""/>
+                </div>
 
-                    <fieldset class="text">
-                        <label>Email Address</label>
-                        <input type="email" class="text email" name="email" value=""/>
-                    </fieldset>
+                <h2>Textarea</h2>
+                <p>No class attribute necessary</p>
+                <div class="field">
+                    <label>Label</label>
+                    <textarea name="textarea"></textarea>
+                </div>
 
-                    <fieldset class="textarea">
-                        <label>What&#x27;s on your mind?</label>
-                        <textarea name="field-1" rows="10" cols="50"></textarea>
-                    </fieldset>
+                <h2>Textarea w/ Error</h2>
+                <p>Use <code>.error</code></p>
+                <div class="field">
+                    <label>Label</label>
+                    <textarea class="error" name="textarea"></textarea>
+                </div>
 
-                    <fieldset class="select">
-                        <label>Select Field Label</label>
-                        <select>
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                        </select>
-                    </fieldset>
+                <h2>Select</h2>
+                <div class="field">
+                    <label>Label</label>
+                    <select>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
 
-                    <fieldset class="checkbox">
-                        <label>Checkbox Group Label</label>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="foo1" value="1"/> Checkbox label</label>
-                            <label><input type="checkbox" name="foo2" value="2"/> Checkbox label</label>
-                            <label><input type="checkbox" name="foo3" value="3"/> Checkbox label</label>
-                        </div>
-                    </fieldset>
+                <h2>Checkbox Group</h2>
+                <div class="field">
+                    <label>Group Label</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="foo1" value="1"/> Checkbox label</label>
+                        <label><input type="checkbox" name="foo2" value="2"/> Checkbox label</label>
+                        <label><input type="checkbox" name="foo3" value="3"/> Checkbox label</label>
+                    </div>
+                </div>
 
-                    <fieldset class="radio">
-                        <label>Radio Group Label</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="foo4" value="1"/> Radio label</label>
-                            <label><input type="radio" name="foo5" value="2"/> Radio label</label>
-                            <label><input type="radio" name="foo6" value="3"/> Radio label</label>
-                        </div>
-                    </fieldset>
+                <h2>Radio Group</h2>
+                <div class="field">
+                    <label>Group Label</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="foo4" value="1"/> Radio label</label>
+                        <label><input type="radio" name="foo5" value="2"/> Radio label</label>
+                        <label><input type="radio" name="foo6" value="3"/> Radio label</label>
+                    </div>
+                </div>
 
-                    <fieldset class="submit">
-                        <input type="submit" class="btn btn-double btn-clean" value="Submit Form"/>
-                    </fieldset>
-                </form>
+                <div class="field">
+                    <input type="submit" class="btn btn-double btn-clean" value="Submit Form"/>
+                </div>
             </div>
         </div>
     </div>
