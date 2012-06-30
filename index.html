@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet/less" href="all.less">
     <!-- optional remove in production -->
-    <script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js"></script>
+    <script src="less-1.3.0.min.js"></script>
     <script>
          var refresh = function () {
             localStorage.clear(); // <-- Remove LESS cache
@@ -508,73 +508,99 @@
 
     <!-- BUTTONS -->
     <h1>Buttons</h1>
-    <div class="grid-fixed mbd">
+
+    <h2>Styles</h2>
+    <p>
+        These are the types of buttons you can use. Colors may be customized in the LESS stylesheet.
+    </p>
+    <div class="grid-fixed">
         <div class="row">
-            <div class="col12">
-                <h2>Styles</h2>
-                <p>These classes represent the related button styles shown below.</p>
-                <ul>
-                    <li><code>.btn-minimal</code></li>
-                    <li><code>.btn-clean</code></li>
-                    <li><code>.btn-soft</code></li>
-                    <li><code>.btn-pill</code></li>
-                    <li><code>.btn-gloss</code></li>
-                </ul>
-
-                <h2>Half Size (Baseline / 2)</h2>
-                <p>Use <code>.btn-half</code></p>
+            <div class="col3">
                 <p>
-                    <a href="" class="btn-half btn-minimal">Minimal</a>
-                    <a href="" class="btn-half btn-clean">Clean</a>
-                    <a href="" class="btn-half btn-soft">Soft</a>
-                    <a href="" class="btn-half btn-pill">Pill Button</a>
-                    <a href="" class="btn-half btn-gloss">Gloss</a>
+                    <a class="btn">Default Button</a>
                 </p>
+            </div>
+            <div class="col9">
+                Use <code>.btn</code>
+            </div>
+        </div>
 
-                <h2>Default Size (Baseline x 1.5)</h2>
-                <p>Use <code>.btn-single</code></p>
+        <div class="row">
+            <div class="col3">
                 <p>
-                    <a href="" class="btn-single btn-minimal">Minimal</a>
-                    <a href="" class="btn-single btn-clean">Clean</a>
-                    <a href="" class="btn-single btn-soft">Soft</a>
-                    <a href="" class="btn-single btn-pill">Pill Button</a>
-                    <a href="" class="btn-single btn-gloss">Gloss</a>
+                    <a class="btn btn-primary">Primary Button</a>
                 </p>
+            </div>
+            <div class="col9">
+                Use <code>.btn-primary</code>
+            </div>
+        </div>
 
-                <h2>Double Size (Baseline x 2)</h2>
-                <p>Use <code>.btn-double</code></p>
+        <div class="row">
+            <div class="col3">
                 <p>
-                    <a href="" class="btn-double btn-minimal">Minimal</a>
-                    <a href="" class="btn-double btn-clean">Clean</a>
-                    <a href="" class="btn-double btn-soft">Soft</a>
-                    <a href="" class="btn-double btn-pill">Pill Button</a>
-                    <a href="" class="btn-double btn-gloss">Gloss</a>
+                    <a class="btn btn-success">Success Button</a>
                 </p>
+            </div>
+            <div class="col9">
+                Use <code>.btn-success</code>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col3">
+                <p>
+                    <a class="btn btn-warning">Warning Button</a>
+                </p>
+            </div>
+            <div class="col9">
+                Use <code>.btn-warning</code>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col3">
+                <p>
+                    <a class="btn btn-danger">Danger Button</a>
+                </p>
+            </div>
+            <div class="col9">
+                Use <code>.btn-danger</code>
             </div>
         </div>
     </div>
 
-    <!-- BARS -->
-    <h1>Bars</h1>
+    <h2>Sizes</h2>
+    <p>
+        These are the sizes of buttons you may use. These will normally be coupled with a button style above.
+    </p>
     <div class="grid-fixed mbd">
         <div class="row">
-            <div class="col12">
-                <p>Use <code>.bar-minimal</code></p>
-                <p class="bar-minimal">Minimal</p>
-
-                <p>Use <code>.bar-clean</code></p>
-                <p class="bar-clean">Clean</p>
-
-                <p>Use <code>.bar-soft</code></p>
-                <p class="bar-soft">Soft</p>
-
-                <p>Use <code>.bar-pill</code></p>
-                <p class="bar-pill">Pill</p>
-
-                <p>Use <code>.bar-gloss</code></p>
-                <p class="bar-gloss">Gloss</p>
+            <div class="col3">
+                <p><a class="btn btn-primary btn-d">Double Size</a></p>
             </div>
-        </div><!-- .row -->
+            <div class="col9">
+                <p>Use <code>.btn-d</code> or <code>.btn-double</code></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col3">
+                <p><a class="btn btn-primary btn-s">Single Size</a></p>
+            </div>
+            <div class="col9">
+                <p>Use <code>.btn-s</code> or <code>.btn-single</code></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col3">
+                <p><a class="btn btn-primary btn-h">Half Size</a></p>
+            </div>
+            <div class="col9">
+                <p>Use <code>.btn-h</code> or <code>.btn-half</code></p>
+            </div>
+        </div>
     </div>
 
     <!-- PAGE STYLE GUIDE -->
@@ -752,7 +778,7 @@
                 </div>
 
                 <div class="field">
-                    <input type="submit" class="btn btn-double btn-clean" value="Submit Form"/>
+                    <input type="submit" class="btn-primary" value="Submit Form"/>
                 </div>
             </div>
         </div>
