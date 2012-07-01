@@ -45,53 +45,69 @@
 <body>
     <!-- GUIDELINES -->
     <h1>Guidelines</h1>
-    <p>
-        The NMC bootstrap is a good starting point for your projects. It is not conclusive
-        or absolute; it is meant only to provide a foundation upon which you can customize,
-        tweak, and explore.
-    </p>
-    <p>
-        However, there are several guidelines that you should follow while using this bootstrap.
-    </p>
-    <ol>
-        <li>
-            Do not use <code>id</code> attributes unless absolutely needed. Use
-            reusable <code>class</code> attributes instead.
-        </li>
-        <li>
-            Avoid setting hard-coded widths on flow content. Instead, let surrounding grid
-            containers define width of flow content.
-        </li>
-        <li>
-            Use LESS variables to define common property values (e.g. colors). This allows
-            you to quickly change the color value in one place instead of in many places.
-        </li>
-        <li>
-            Abstract frequently-used, site-specific UI patterns into CSS classes. Apply
-            reusable classes where needed.
-        </li>
-        <li>
-            Avoid deep, inefficient CSS selectors (e.g. <code>.header p .callout</code>). Instead,
-            use more efficient, targeted CSS selectors (e.g. <code>.callout</code>).
-        </li>
-    </ol>
+    <div class="grid-fluid mbd">
+        <div class="row">
+            <div class="col12">
+                <p>
+                    The NMC bootstrap is a good starting point for your projects. It is not conclusive
+                    or absolute; it is meant only to provide a foundation upon which you can customize,
+                    tweak, and explore.
+                </p>
+                <p>
+                    However, there are several guidelines that you should follow while using this bootstrap.
+                </p>
+                <ol>
+                    <li>
+                        Do not use <code>id</code> attributes unless absolutely needed. Use
+                        reusable <code>class</code> attributes instead.
+                    </li>
+                    <li>
+                        Avoid setting hard-coded widths on flow content. Instead, let surrounding grid
+                        containers define width of flow content.
+                    </li>
+                    <li>
+                        Use LESS variables to define common property values (e.g. colors). This allows
+                        you to quickly change the color value in one place instead of in many places.
+                    </li>
+                    <li>
+                        Abstract frequently-used, site-specific UI patterns into CSS classes. Apply
+                        reusable classes where needed.
+                    </li>
+                    <li>
+                        Avoid deep, inefficient CSS selectors (e.g. <code>.header p .callout</code>). Instead,
+                        use more efficient, targeted CSS selectors (e.g. <code>.callout</code>).
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
 
     <!-- GRIDS -->
     <h1>Grid</h1>
+    <div class="grid-fluid">
+        <div class="row">
+            <div class="col6">
+                <p>
+                    The NMC bootstrap contains a grid system that makes it simple to create multi-column
+                    layouts for desktop and mobile browsers. This grid system relies on a DIV with class
+                    <code>.grid-fixed</code> (or <code>.grid-fluid</code>) that contains one or more DIV elements with class <code>.row</code>
+                    that contain one or more elements with class <code>.colX</code> or <code>.m-colX</code>.
+                </p>
 
-    <p>
-        The NMC bootstrap contains a grid system that makes it simple to create multi-column
-        layouts for desktop and mobile browsers. This grid system relies on a DIV with class
-        <code>.grid-fixed</code> (or <code>.grid-fluid</code>) that contains one or more DIV elements with class <code>.row</code>
-        that contain one or more elements with class <code>.colX</code> (where X is the column span).
-    </p>
-    <p>
-        For desktop browsers, each grid row must contain 12 columns; this may be changed in "variables.less".
-    </p>
-    <p>
-        For mobile browsers, each grid row must contain 4 columns; this may be changed in "variables.less".
-    </p>
-    <pre>
+                <h2 class="gamma">For Desktop</h2>
+                <p>
+                    For desktop browsers, each grid row must contain 12 columns; this may be changed in
+                    "variables.less". Each column must have a class <code>.colX</code>.
+                </p>
+
+                <h2 class="gamma">For Mobile</h2>
+                <p>
+                    For mobile browsers, each grid row must contain 4 columns; this may be changed in
+                    "variables.less". Each column must have a class <code>.m-colX</code>.
+                </p>
+            </div>
+            <div class="col6">
+                <pre>
 &lt;div class=&quot;grid-fixed&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
         &lt;div class=&quot;col6 m-col2&quot;&gt;
@@ -110,12 +126,13 @@
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</pre>
+            </div>
+        </div>
+    </div>
 
-    <h2>Fixed</h2>
-
-    <h3 class="mbn">Basic</h3>
+    <h2>Fixed Grid</h2>
     <p>
-        Use <code>.grid-fixed</code>. The grid width is determined by the column and gutter width variables.
+        Use <code>.grid-fixed</code>. The grid width is fixed, determined by the column width and gutter width in "variables.less".
     </p>
     <div class="grid-fixed mbs">
         <div class="row display">
@@ -251,7 +268,7 @@
         </div>
     </div>
 
-    <h3 class="mbn">Offsets</h3>
+    <h3 class="mbn">Column Offsets</h3>
     <p>
         Fixed-width grid with offset columns.
     </p>
@@ -288,7 +305,7 @@
         </div>
     </div>
 
-    <h3 class="mbn">Push/Pull</h3>
+    <h3 class="mbn">Column Push/Pull</h3>
     <p>
         Fixed-width grid with push/pull columns.
     </p>
@@ -388,9 +405,9 @@
         </div>
     </div>
 
-    <h2 class="mbn">Fluid</h2>
+    <h2>Fluid Grid</h2>
     <p>
-        Use <code>.grid-fluid</code>. The grid width is determined by percentage of parent container width.
+        Use <code>.grid-fluid</code>. Gutter and column widths are a percentage of parent container width.
     </p>
     <div class="grid-fluid mbs">
         <div class="row display">
@@ -521,44 +538,62 @@
         </div>
     </div>
 
-    <h2 class="mbn">Nested</h2>
+    <h2>Nested Grid</h2>
     <p>
-        Nested-grid. This demonstrates a grid within a grid.
+        This demonstrates a grid within a grid. The left column (below) contains a grid within a grid.
     </p>
-    <div class="grid-fixed mbd">
+    <div class="grid-fluid mbd">
         <div class="row">
             <div class="col6">
                 <div class="row display">
-                    <div class="col3">
+                    <div class="col6">
                         .col3
                     </div>
-                    <div class="col3">
+                    <div class="col6">
                         .col3
                     </div>
                 </div>
                 <div class="row display">
-                    <div class="col2">
+                    <div class="col4">
                         .col2
                     </div>
-                    <div class="col2">
+                    <div class="col4">
                         .col2
                     </div>
-                    <div class="col2">
+                    <div class="col4">
                         .col2
                     </div>
                 </div>
             </div>
             <div class="col6">
-                <p>&larr; The left column contains another grid.</p>
+                <pre>
+&lt;div class=&quot;grid-fixed mbd&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col6&quot;&gt;
+            &lt;div class=&quot;row display&quot;&gt;
+                &lt;div class=&quot;col3&quot;&gt;.col3&lt;/div&gt;
+                &lt;div class=&quot;col3&quot;&gt;.col3&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row display&quot;&gt;
+                &lt;div class=&quot;col2&quot;&gt;.col2&lt;/div&gt;
+                &lt;div class=&quot;col2&quot;&gt;.col2&lt;/div&gt;
+                &lt;div class=&quot;col2&quot;&gt;.col2&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col6&quot;&gt;
+            &lt;p&gt;This is the second column of the outer-grid.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
             </div>
         </div>
     </div>
 
     <!-- ALERTS -->
     <h1>Alerts</h1>
-    <div class="grid-fixed mbd">
+    <div class="grid-fluid mbd">
         <div class="row">
-            <div class="col12">
+            <div class="col6">
                 <p>Use <code>.alert</code></p>
                 <div class="alert">
                     <strong>Warning!</strong> This is a warning message.
@@ -579,223 +614,233 @@
                     <strong>Get this!</strong> This is an info message.
                 </div>
             </div>
+            <div class="col6">
+                <pre>
+&lt;div class=&quot;alert&quot;&gt;
+    &lt;strong&gt;Error!&lt;/strong&gt; Something went wrong.
+&lt;/div&gt;</pre>
+            </div>
         </div>
     </div>
 
     <!-- BUTTONS -->
     <h1>Buttons</h1>
 
-    <h2>Styles</h2>
+    <h2 class="gamma mbn">Styles</h2>
     <p>
         These are the types of buttons you can use. Colors may be customized in the LESS stylesheet.
     </p>
-    <div class="grid-fixed">
+    <div class="grid-fluid">
         <div class="row">
-            <div class="col3">
-                <p>
-                    <a class="btn">Default Button</a>
-                </p>
-            </div>
-            <div class="col9">
-                Use <code>.btn</code>
-            </div>
-        </div>
+            <div class="col6">
+                <div class="row">
+                    <div class="col4">
+                        <p>
+                            <a class="btn">Default Button</a>
+                        </p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn</code></p>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="col3">
-                <p>
-                    <a class="btn btn-primary">Primary Button</a>
-                </p>
-            </div>
-            <div class="col9">
-                Use <code>.btn-primary</code>
-            </div>
-        </div>
+                <div class="row">
+                    <div class="col4">
+                        <p>
+                            <a class="btn-primary">Primary Button</a>
+                        </p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn-primary</code></p>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="col3">
-                <p>
-                    <a class="btn btn-success">Success Button</a>
-                </p>
-            </div>
-            <div class="col9">
-                Use <code>.btn-success</code>
-            </div>
-        </div>
+                <div class="row">
+                    <div class="col4">
+                        <p>
+                            <a class="btn-success">Success Button</a>
+                        </p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn-success</code></p>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="col3">
-                <p>
-                    <a class="btn btn-warning">Warning Button</a>
-                </p>
-            </div>
-            <div class="col9">
-                Use <code>.btn-warning</code>
-            </div>
-        </div>
+                <div class="row">
+                    <div class="col4">
+                        <p>
+                            <a class="btn-warning">Warning Button</a>
+                        </p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn-warning</code></p>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="col3">
-                <p>
-                    <a class="btn btn-danger">Danger Button</a>
-                </p>
+                <div class="row">
+                    <div class="col4">
+                        <p>
+                            <a class="btn-danger">Danger Button</a>
+                        </p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn-danger</code></p>
+                    </div>
+                </div>
             </div>
-            <div class="col9">
-                Use <code>.btn-danger</code>
+            <div class="col6">
+                <pre>&lt;a class=&quot;btn-success&quot; href=&quot;#&quot;&gt;Success Button&lt;/a&gt;</pre>
+                <pre>&lt;input class=&quot;btn-primary&quot; type=&quot;submit&quot; value=&quot;Submit Form&quot;/&gt;</pre>
             </div>
         </div>
     </div>
 
-    <h2>Sizes</h2>
+    <h2 class="gamma mbn">Sizes</h2>
     <p>
         These are the sizes of buttons you may use. These will normally be coupled with a button style above.
     </p>
-    <div class="grid-fixed mbd">
+    <div class="grid-fluid mbd">
         <div class="row">
-            <div class="col3">
-                <p><a class="btn btn-primary btn-d">Double Size</a></p>
-            </div>
-            <div class="col9">
-                <p>Use <code>.btn-d</code> or <code>.btn-double</code></p>
-            </div>
-        </div>
+            <div class="col6">
+                <div class="row">
+                    <div class="col4">
+                        <p><a class="btn-primary btn-d">Double Size</a></p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn-d</code> or <code>.btn-double</code></p>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="col3">
-                <p><a class="btn btn-primary btn-s">Single Size</a></p>
-            </div>
-            <div class="col9">
-                <p>Use <code>.btn-s</code> or <code>.btn-single</code></p>
-            </div>
-        </div>
+                <div class="row">
+                    <div class="col4">
+                        <p><a class="btn-primary btn-s">Single Size</a></p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn-s</code> or <code>.btn-single</code></p>
+                    </div>
+                </div>
 
-        <div class="row">
-            <div class="col3">
-                <p><a class="btn btn-primary btn-h">Half Size</a></p>
+                 <div class="row">
+                    <div class="col4">
+                        <p><a class="btn-primary btn-h">Half Size</a></p>
+                    </div>
+                    <div class="col8">
+                        <p>Use <code>.btn-h</code> or <code>.btn-half</code></p>
+                    </div>
+                </div>
             </div>
-            <div class="col9">
-                <p>Use <code>.btn-h</code> or <code>.btn-half</code></p>
+            <div class="col6">
+                <pre>&lt;a class=&quot;btn-success btn-d&quot; href=&quot;#&quot;&gt;Success Button&lt;/a&gt;</pre>
+                <pre>&lt;input class=&quot;btn-primary btn-d&quot; type=&quot;submit&quot; value=&quot;Submit Form&quot;/&gt;</pre>
             </div>
         </div>
     </div>
 
-    <!-- PAGE STYLE GUIDE -->
-    <h1>Style Guide</h1>
-    <div class="grid-fixed">
+    <!-- TYPOGRAPHY -->
+    <h1>Typography</h1>
+    <div class="grid-fluid mbd">
+        <h2 class="gamma">Paragraph with Optional Lead</h2>
         <div class="row">
-            <div class="col12">
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    eges<sup>tas</sup>. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
-                    sit amet, ante. Donec eu libero sit amet quam egestas. Aenean ultri<sub>cies</sub>
-                    mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien
-                    ullamcorper pharetra. <code>Vestibulum erat wisi</code>, condimentum sed, commodo
-                    vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum,
-                    eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-                    pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor
-                    neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam
-                    dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
+            <div class="col6">
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
                 </p>
+                <p>
+                    Lorem 2<sup>nd</sup> ipsum dolor sit amet, <a href="#">consectetur adipisicing</a> elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation CO<sub>2</sub> ullamco <strong>laboris nisi</strong> ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    <em>cillum dolore</em> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt.
+                </p>
+            </div>
+            <div class="col6">
+                <pre>&lt;p class=&quot;lead&quot;&gt;
+    Lorem ipsum dolor sit amet...
+&lt;/p&gt;
+&lt;p&gt;
+    Lorem ipsum dolor sit amet...
+&lt;/p&gt;</pre>
+            </div>
+        </div>
 
-                <p>
-                    <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada
-                    fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor
-                    sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi
-                    vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper
-                    pharetra. Vestibulum erat wisi, condimentum sed, <strong>commodo vitae</strong>, ornare
-                    sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum
-                    orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis
-                    pulvinar facilisis. Ut felis.
-                </p>
-
-                <h2>Heading Level 2</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida.
-                </p>
-                <ol>
-                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                    <li>Aliquam tincidunt mauris eu risus.</li>
-                </ol>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida.
-                </p>
+        <h2 class="gamma">Blockquote</h2>
+        <div class="row">
+            <div class="col6">
                 <blockquote>
                     <p>
-                        Blockquote p.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna.
-                        Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.
-                        Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-                        tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <small>&mdash; John Smith</small>
                 </blockquote>
-
-                <h3>Heading Level 3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida.
-                </p>
-                <ul>
-                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                    <li>Aliquam tincidunt mauris eu risus.</li>
-                </ul>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida.
-                </p>
-
-                <h4>Heading Level 4</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida.
-                </p>
-                <pre class="brush:css">/************************************
-* Multiline comment
-************************************/
-.heading a {
-    display: block;
-    width: 300px;
-    height: 80px;
-}</pre>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida.
-                </p>
-
-                <h5>Heading Level 5</h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec
-                    eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis
-                    elit sit amet quam. Vivamus pretium ornare est.
-                </p>
-
-                <h6>Heading Level 6</h6>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at
-                    felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec
-                    eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis
-                    elit sit amet quam. Vivamus pretium ornare est.
-                </p>
-                <dl>
-                    <dt>Definition Term</dt>
-                    <dd>The full definition goes here</dd>
-
-                    <dt>Definition Term</dt>
-                    <dd>The full definition goes here</dd>
-
-                    <dt>Definition Term</dt>
-                    <dd>The full definition goes here</dd>
-                </dl>
+            </div>
+            <div class="col6">
+                <pre>&lt;blockquote&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet...
+    &lt;/p&gt;
+    &lt;small&gt;&amp;mdash; John Smith&lt;/small&gt;
+&lt;/blockquote&gt;</pre>
             </div>
         </div>
-    </div>
 
-    <h1>Tables</h1>
-    <div class="grid-fixed mbd">
+        <h2 class="gamma">Lists</h2>
         <div class="row">
-            <div class="col12">
+            <div class="col6">
+                <div class="col4">
+                    <h3 class="epsilon">Unordered List</h3>
+                    <p>Default style</p>
+                    <ul>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </ul>
+                </div>
+                <div class="col4">
+                    <h3 class="epsilon">Ordered List</h3>
+                    <p>Default style</p>
+                    <ol>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </ol>
+                </div>
+                <div class="col4">
+                    <h3 class="epsilon">Unstyled List</h3>
+                    <p>Use <code>.noList</code></p>
+                    <ul class="noList">
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col6">
+                <pre>&lt;ul&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul class=&quot;noList&quot;&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+    &lt;li&gt;List item&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </div>
+        </div>
+
+        <h2 class="gamma">Tables</h2>
+
+        <h3 class="epsilon">Default</h3>
+        <div class="row">
+            <div class="col6">
                 <p>Use <code>.table</code></p>
                 <table class="table">
                     <thead>
@@ -824,10 +869,29 @@
                     </tbody>
                 </table>
             </div>
+            <div class="col6">
+                <pre>&lt;table class=&quot;table&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Col 1&lt;/th&gt;
+            &lt;th&gt;Col 2&lt;/th&gt;
+            &lt;th&gt;Col 3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Value 1&lt;/td&gt;
+            &lt;td&gt;Value 2&lt;/td&gt;
+            &lt;td&gt;Value 3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+            </div>
         </div>
 
+        <h3 class="epsilon">Striped</h3>
         <div class="row">
-            <div class="col12">
+            <div class="col6">
                 <p>Use <code>.table .table-striped</code></p>
                 <table class="table table-striped">
                     <thead>
@@ -856,10 +920,29 @@
                     </tbody>
                 </table>
             </div>
+            <div class="col6">
+                <pre>&lt;table class=&quot;table table-striped&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Col 1&lt;/th&gt;
+            &lt;th&gt;Col 2&lt;/th&gt;
+            &lt;th&gt;Col 3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Value 1&lt;/td&gt;
+            &lt;td&gt;Value 2&lt;/td&gt;
+            &lt;td&gt;Value 3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+            </div>
         </div>
 
+        <h3 class="epsilon">Bordered</h3>
         <div class="row">
-            <div class="col12">
+            <div class="col6">
                 <p>Use <code>.table .table-bordered</code></p>
                 <table class="table table-bordered">
                     <thead>
@@ -888,12 +971,31 @@
                     </tbody>
                 </table>
             </div>
+            <div class="col6">
+                <pre>&lt;table class=&quot;table table-bordered&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Col 1&lt;/th&gt;
+            &lt;th&gt;Col 2&lt;/th&gt;
+            &lt;th&gt;Col 3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Value 1&lt;/td&gt;
+            &lt;td&gt;Value 2&lt;/td&gt;
+            &lt;td&gt;Value 3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+            </div>
         </div>
 
+        <h3 class="epsilon">Combined</h3>
         <div class="row">
-            <div class="col12">
-                <p>Use <code>.table .table-bordered .table-striped</code></p>
-                <table class="table table-bordered table-striped">
+            <div class="col6">
+                <p>Use <code>.table .table-striped .table-bordered</code></p>
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -919,6 +1021,24 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+            <div class="col6">
+                <pre>&lt;table class=&quot;table table-striped table-bordered&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Col 1&lt;/th&gt;
+            &lt;th&gt;Col 2&lt;/th&gt;
+            &lt;th&gt;Col 3&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Value 1&lt;/td&gt;
+            &lt;td&gt;Value 2&lt;/td&gt;
+            &lt;td&gt;Value 3&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
             </div>
         </div>
     </div>
