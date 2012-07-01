@@ -43,8 +43,36 @@
     <![endif]-->
 </head>
 <body>
-    <!-- GRIDS -->
+    <!-- GUIDELINES -->
+    <h1>Guidelines</h1>
+    <p>
+        The NMC bootstrap is a good starting point for your projects. It is not conclusive
+        or absolute; it is meant only to provide a foundation upon which you can customize,
+        tweak, and explore.
+    </p>
+    <p>
+        However, there are several guidelines that you should follow while using this bootstrap.
+    </p>
+    <ol>
+        <li>
+            Do not use <code>id</code> attributes unless absolutely needed. Use
+            reusable <code>class</code> attributes instead.
+        </li>
+        <li>
+            Avoid setting hard-coded widths on flow content. Instead, let surrounding grid
+            containers define width of flow content.
+        </li>
+        <li>
+            Use LESS variables to define common property values (e.g. colors). This allows
+            you to quickly change the color value in one place instead of in many places.
+        </li>
+        <li>
+            Abstract frequently-used, site-specific UI patterns into CSS classes. Apply
+            reusable classes where needed.
+        </li>
+    </ol>
 
+    <!-- GRIDS -->
     <h1>Grid</h1>
 
     <p>
