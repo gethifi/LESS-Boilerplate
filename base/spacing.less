@@ -19,113 +19,324 @@
  * p, m, lh = padding, margin, line-height
  * a, t, r, b, l, h, v = all, top, right, bottom, left, horizontal, vertical
  * n, h, s, d = none(0px), half(@baseline / 2), single(@baseline), double(@baseline * 2), none(0px)
+ * i = ! important
  */
 
-.ptn, .pvn, .pan{
-    padding-top: 0px !important
-}
-.pth, .pvh, .pah{
-    padding-top: @baseline / 2 !important
-}
-.pts, .pvs, .pas{
-    padding-top: @baseline !important
-}
-.ptd, .pvd, .pad{
-    padding-top: @baseline * 2 !important
-}
-.prn, .phn, .pan{
-    padding-right: 0px !important
-}
-.prh, .phh, .pah{
-    padding-right: @baseline / 2 !important
-}
-.prs, .phs, .pas{
-    padding-right: @baseline !important
-}
-.prd, .phd, .pad{
-    padding-right: @baseline * 2 !important
-}
-.pbn, .pvn, .pan{
-    padding-bottom: 0px !important
-}
-.pbh, .pvh, .pah{
-    padding-bottom: @baseline / 2 !important
-}
-.pbs, .pvs, .pas{
-    padding-bottom: @baseline !important
-}
-.pbd, .pvd, .pad{
-    padding-bottom: @baseline * 2 !important
-}
-.pln, .phn, .pan{
-    padding-left: 0px !important
-}
-.plh, .phh, .pah{
-    padding-left: @baseline / 2 !important
-}
-.pls, .phs, .pas{
-    padding-left: @baseline !important
-}
-.pld, .phd, .pad{
-    padding-left: @baseline * 2 !important
-}
-.mtn, .mvn, .man{
-    margin-top: 0px !important
-}
-.mth, .mvh, .mah{
-    margin-top: @baseline / 2 !important
-}
-.mts, .mvs, .mas{
-    margin-top: @baseline !important
-}
-.mtd, .mvd, .mad{
-    margin-top: @baseline * 2 !important
-}
-.mrn, .mhn, .man{
-    margin-right: 0px !important
-}
-.mrh, .mhh, .mah{
-    margin-right: @baseline / 2 !important
-}
-.mrs, .mhs, .mas{
-    margin-right: @baseline !important
-}
-.mrd, .mhd, .mad{
-    margin-right: @baseline * 2 !important
-}
-.mbn, .mvn, .man{
-    margin-bottom: 0px !important
-}
-.mbh, .mvh, .mah{
-    margin-bottom: @baseline / 2 !important
-}
-.mbs, .mvs, .mas{
-    margin-bottom: @baseline !important
-}
-.mbd, .mvd, .mad{
-    margin-bottom: @baseline * 2 !important
-}
-.mln, .mhn, .man{
-    margin-left: 0px !important
-}
-.mlh, .mhh, .mah{
-    margin-left: @baseline / 2 !important
-}
-.mls, .mhs, .mas{
-    margin-left: @baseline !important
-}
-.mld, .mhd, .mad{
-    margin-left: @baseline * 2 !important
-}
-.lhh {
-    line-height: @baseline / 2 !important;
-}
-.lhs {
-    line-height: @baseline !important;
-}
-.lhd {
-    line-height: @baseline * 2 !important;
-}
-.lhn {
-    line-height: 0px !important;
-}
+ @n: 0 * @baseline;
+ @q: .25 * @baseline;
+ @h: .5 * @baseline;
+ @s: 1 * @baseline;
+ @3h: 1.5 * @baseline;
+ @d: 2 * @baseline;
+ @5h: 2.5 * @baseline;
+ @t: 3 * @baseline;
+
+// individual
+.pt(@var) { padding-top: @var; }
+.mt(@var) { margin-top: @var; }
+.pb(@var) { padding-bottom: @var; }
+.mb(@var) { margin-bottom: @var; }
+.pl(@var) { padding-left: @var; }
+.ml(@var) { margin-left: @var; }
+.pr(@var) { padding-right: @var; }
+.mr(@var) { margin-right: @var; }
+// across
+.pv(@var) { .pt(@var); .pb(@var); }
+.mv(@var) { .mt(@var); .mb(@var); }
+.ph(@var) { .pl(@var); .pr(@var); }
+.mh(@var) { .ml(@var); .mr(@var); }
+// all
+.pa(@var) { .pv(@var); .ph(@var); }
+.ma(@var) { .mv(@var); .mh(@var); }
+// Line height
+.lh(@var) { line-height: @var; }
+
+// n - none
+@namt: @n;
+@namti: @namt !important;
+.ptn  { .pt(@namt) }
+.ptni { .pt(@namti) }
+.pbn  { .pb(@namt) }
+.pbni { .pb(@namti) }
+.pln  { .pl(@namt) }
+.plni { .pl(@namti) }
+.prn  { .pr(@namt) }
+.prni { .pr(@namti) }
+.pvn  { .pv(@namt) }
+.pvni { .pv(@namti) }
+.phn  { .ph(@namt) }
+.phni { .ph(@namti) }
+.pan  { .pa(@namt) }
+.pani { .pa(@namti) }
+
+.mtn  { .mt(@namt) }
+.mtni { .mt(@namti) }
+.mbn  { .mb(@namt) }
+.mbni { .mb(@namti) }
+.mln  { .ml(@namt) }
+.mlni { .ml(@namti) }
+.mrn  { .mr(@namt) }
+.mrni { .mr(@namti) }
+.mvn  { .mv(@namt) }
+.mvni { .mv(@namti) }
+.mhn  { .mh(@namt) }
+.mhni { .mh(@namti) }
+.man  { .ma(@namt) }
+.mani { .ma(@namti) }
+
+.lhn  { .lh(@namt) }
+.lhni { .lh(@namti) }
+
+// q - quarter
+@qamt: @q;
+@qamti: @qamt !important;
+.ptq  { .pt(@qamt) }
+.ptqi { .pt(@qamti) }
+.pbq  { .pb(@qamt) }
+.pbqi { .pb(@qamti) }
+.plq  { .pl(@qamt) }
+.plqi { .pl(@qamti) }
+.prq  { .pr(@qamt) }
+.prqi { .pr(@qamti) }
+.pvq  { .pv(@qamt) }
+.pvqi { .pv(@qamti) }
+.phq  { .ph(@qamt) }
+.phqi { .ph(@qamti) }
+.paq  { .pa(@qamt) }
+.paqi { .pa(@qamti) }
+
+.mtq  { .mt(@qamt) }
+.mtqi { .mt(@qamti) }
+.mbq  { .mb(@qamt) }
+.mbqi { .mb(@qamti) }
+.mlq  { .ml(@qamt) }
+.mlqi { .ml(@qamti) }
+.mrq  { .mr(@qamt) }
+.mrqi { .mr(@qamti) }
+.mvq  { .mv(@qamt) }
+.mvqi { .mv(@qamti) }
+.mhq  { .mh(@qamt) }
+.mhqi { .mh(@qamti) }
+.maq  { .ma(@qamt) }
+.maqi { .ma(@qamti) }
+
+.lhq  { .lh(@qamt) }
+.lhqi { .lh(@qamti) }
+
+// h - half
+@hamt: @h;
+@hamti: @hamt !important;
+.pth  { .pt(@hamt) }
+.pthi { .pt(@hamti) }
+.pbh  { .pb(@hamt) }
+.pbhi { .pb(@hamti) }
+.plh  { .pl(@hamt) }
+.plhi { .pl(@hamti) }
+.prh  { .pr(@hamt) }
+.prhi { .pr(@hamti) }
+.pvh  { .pv(@hamt) }
+.pvhi { .pv(@hamti) }
+.phh  { .ph(@hamt) }
+.phhi { .ph(@hamti) }
+.pah  { .pa(@hamt) }
+.pahi { .pa(@hamti) }
+
+.mth  { .mt(@hamt) }
+.mthi { .mt(@hamti) }
+.mbh  { .mb(@hamt) }
+.mbhi { .mb(@hamti) }
+.mlh  { .ml(@hamt) }
+.mlhi { .ml(@hamti) }
+.mrh  { .mr(@hamt) }
+.mrhi { .mr(@hamti) }
+.mvh  { .mv(@hamt) }
+.mvhi { .mv(@hamti) }
+.mhh  { .mh(@hamt) }
+.mhhi { .mh(@hamti) }
+.mah  { .ma(@hamt) }
+.mahi { .ma(@hamti) }
+
+.lhh  { .lh(@hamt) }
+.lhhi { .lh(@hamti) }
+
+// s - single
+@samt: @s;
+@samti: @samt !important;
+.pts  { .pt(@samt) }
+.ptsi { .pt(@samti) }
+.pbs  { .pb(@samt) }
+.pbsi { .pb(@samti) }
+.pls  { .pl(@samt) }
+.plsi { .pl(@samti) }
+.prs  { .pr(@samt) }
+.prsi { .pr(@samti) }
+.pvs  { .pv(@samt) }
+.pvsi { .pv(@samti) }
+.phs  { .ph(@samt) }
+.phsi { .ph(@samti) }
+.pas  { .pa(@samt) }
+.pasi { .pa(@samti) }
+
+.mts  { .mt(@samt) }
+.mtsi { .mt(@samti) }
+.mbs  { .mb(@samt) }
+.mbsi { .mb(@samti) }
+.mls  { .ml(@samt) }
+.mlsi { .ml(@samti) }
+.mrs  { .mr(@samt) }
+.mrsi { .mr(@samti) }
+.mvs  { .mv(@samt) }
+.mvsi { .mv(@samti) }
+.mhs  { .mh(@samt) }
+.mhsi { .mh(@samti) }
+.mas  { .ma(@samt) }
+.masi { .ma(@samti) }
+
+.lhs  { .lh(@samt) }
+.lhsi { .lh(@samti) }
+
+// 3h - 1.5
+@3hamt: @3h;
+@3hamti: @3hamt !important;
+.pt3h  { .pt(@3hamt) }
+.pt3hi { .pt(@3hamti) }
+.pb3h  { .pb(@3hamt) }
+.pb3hi { .pb(@3hamti) }
+.pl3h  { .pl(@3hamt) }
+.pl3hi { .pl(@3hamti) }
+.pr3h  { .pr(@3hamt) }
+.pr3hi { .pr(@3hamti) }
+.pv3h  { .pv(@3hamt) }
+.pv3hi { .pv(@3hamti) }
+.ph3h  { .ph(@3hamt) }
+.ph3hi { .ph(@3hamti) }
+.pa3h  { .pa(@3hamt) }
+.pa3hi { .pa(@3hamti) }
+
+.mt3h  { .mt(@3hamt) }
+.mt3hi { .mt(@3hamti) }
+.mb3h  { .mb(@3hamt) }
+.mb3hi { .mb(@3hamti) }
+.ml3h  { .ml(@3hamt) }
+.ml3hi { .ml(@3hamti) }
+.mr3h  { .mr(@3hamt) }
+.mr3hi { .mr(@3hamti) }
+.mv3h  { .mv(@3hamt) }
+.mv3hi { .mv(@3hamti) }
+.mh3h  { .mh(@3hamt) }
+.mh3hi { .mh(@3hamti) }
+.ma3h  { .ma(@3hamt) }
+.ma3hi { .ma(@3hamti) }
+
+.lh3q  { .lh(@3hamt) }
+.lh3qi { .lh(@3hamti) }
+
+// d - double
+@damt: @d;
+@damti: @damt !important;
+.ptd  { .pt(@damt) }
+.ptdi { .pt(@damti) }
+.pbd  { .pb(@damt) }
+.pbdi { .pb(@damti) }
+.pld  { .pl(@damt) }
+.pldi { .pl(@damti) }
+.prd  { .pr(@damt) }
+.prdi { .pr(@damti) }
+.pvd  { .pv(@damt) }
+.pvdi { .pv(@damti) }
+.phd  { .ph(@damt) }
+.phdi { .ph(@damti) }
+.pad  { .pa(@damt) }
+.padi { .pa(@damti) }
+
+.mtd  { .mt(@damt) }
+.mtdi { .mt(@damti) }
+.mbd  { .mb(@damt) }
+.mbdi { .mb(@damti) }
+.mld  { .ml(@damt) }
+.mldi { .ml(@damti) }
+.mrd  { .mr(@damt) }
+.mrdi { .mr(@damti) }
+.mvd  { .mv(@damt) }
+.mvdi { .mv(@damti) }
+.mhd  { .mh(@damt) }
+.mhdi { .mh(@damti) }
+.mad  { .ma(@damt) }
+.madi { .ma(@damti) }
+
+.lhd  { .lh(@damt) }
+.lhdi { .lh(@damti) }
+
+// 5h - 2.5
+@5hamt: @5h;
+@5hamti: @5hamt !important;
+.pt5h  { .pt(@5hamt) }
+.pt5hi { .pt(@5hamti) }
+.pb5h  { .pb(@5hamt) }
+.pb5hi { .pb(@5hamti) }
+.pl5h  { .pl(@5hamt) }
+.pl5hi { .pl(@5hamti) }
+.pr5h  { .pr(@5hamt) }
+.pr5hi { .pr(@5hamti) }
+.pv5h  { .pv(@5hamt) }
+.pv5hi { .pv(@5hamti) }
+.ph5h  { .ph(@5hamt) }
+.ph5hi { .ph(@5hamti) }
+.pa5h  { .pa(@5hamt) }
+.pa5hi { .pa(@5hamti) }
+
+.mt5h  { .mt(@5hamt) }
+.mt5hi { .mt(@5hamti) }
+.mb5h  { .mb(@5hamt) }
+.mb5hi { .mb(@5hamti) }
+.ml5h  { .ml(@5hamt) }
+.ml5hi { .ml(@5hamti) }
+.mr5h  { .mr(@5hamt) }
+.mr5hi { .mr(@5hamti) }
+.mv5h  { .mv(@5hamt) }
+.mv5hi { .mv(@5hamti) }
+.mh5h  { .mh(@5hamt) }
+.mh5hi { .mh(@5hamti) }
+.ma5h  { .ma(@5hamt) }
+.ma5hi { .ma(@5hamti) }
+
+.lh5h  { .lh(@5hamt) }
+.lh5hi { .lh(@5hamti) }
+
+// t - triple
+@tamt: @t;
+@tamti: @tamt !important;
+.ptt  { .pt(@tamt) }
+.ptti { .pt(@tamti) }
+.pbt  { .pb(@tamt) }
+.pbti { .pb(@tamti) }
+.plt  { .pl(@tamt) }
+.plti { .pl(@tamti) }
+.prt  { .pr(@tamt) }
+.prti { .pr(@tamti) }
+.pvt  { .pv(@tamt) }
+.pvti { .pv(@tamti) }
+.pht  { .ph(@tamt) }
+.phti { .ph(@tamti) }
+.pat  { .pa(@tamt) }
+.pati { .pa(@tamti) }
+
+.mtt  { .mt(@tamt) }
+.mtti { .mt(@tamti) }
+.mbt  { .mb(@tamt) }
+.mbti { .mb(@tamti) }
+.mlt  { .ml(@tamt) }
+.mlti { .ml(@tamti) }
+.mrt  { .mr(@tamt) }
+.mrti { .mr(@tamti) }
+.mvt  { .mv(@tamt) }
+.mvti { .mv(@tamti) }
+.mht  { .mh(@tamt) }
+.mhti { .mh(@tamti) }
+.mat  { .ma(@tamt) }
+.mati { .ma(@tamti) }
+
+.lht  { .lh(@tamt) }
+.lhti { .lh(@tamti) }
+
+
